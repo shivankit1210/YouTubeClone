@@ -138,7 +138,7 @@ const SidebarItem = [
 
 const Sidebar = () => {
   return (
-    <div className="mt-4 absolute h-[calc(100vh-5.625rem)] overflow-y-scroll overflow-x-hidden w-[15%]">
+    <div className="mt-4 relative h-[calc(100vh-5.625rem)] overflow-y-scroll overflow-x-hidden w-[15%]">
         {
          SidebarItem.map((item,index)=>{
             return(
