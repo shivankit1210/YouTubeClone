@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import axios from "axios";
+import { YOUTUBE_VIDEO_API } from "../constants/youtube";
+import { API_KEY } from "../constants/youtube";
 
 const VideoContainer = () => {
-  return (
-    <div>VideoContainer</div>
-  )
-}
+  const fetchVideo = async () => {
+    try {
+      const res = await axios.get(YOUTUBE_VIDEO_API + API_KEY);
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-export default VideoContainer
+  useEffect(() => {
+    fetchVideo();
+  }, []);
+
+  return <div></div>;
+};
+
+export default VideoContainer;
