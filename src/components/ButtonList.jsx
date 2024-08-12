@@ -53,15 +53,16 @@ const buttonList = [
        id: 13,
        title: "ESports"
     },
+   
 ]
 
 const ButtonList = () => {
   return (
-    <div className='flex gap-x-5 place-content-center items-center bg-red-400 '>
+    <div className='flex gap-x-5 place-content-center items-center '>
  {
     buttonList.map((item,index)=>{
         return(
-            <button className='bg-black text-white rounded-lg px-1 py-0 text-sm  ' key={index}>{item.title}</button>
+            <button key={buttonList.id} className='bg-gray-200 text-gray-900 rounded-lg px-1 py-1 text-sm font-semibold' >{item.title}</button>
         )
     })
  }

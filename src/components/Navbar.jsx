@@ -4,14 +4,24 @@ import { IoVideocamOutline } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 
 import Avatar from "react-avatar";
+import { useState } from "react";
+
+import { useDispatch } from "react-redux";
+import { togglesidebar } from "../utils/appSlice";
 
 const Navbar = () => {
+
+  const dispatch =useDispatch();
+  const toggleHandler = () =>{
+  dispatch(togglesidebar());
+  }
+
   return (
     <div className="flex place-content-center items-center justify-between p-3 fixed w-[100%] bg-white top-0 ">
       {/* Navbar Left side */}
 
       <div className="flex gap-x-4">
-        <RxHamburgerMenu size={24} className="cursor-pointer" />
+        <RxHamburgerMenu onClick={toggleHandler} size={24} className="cursor-pointer" />
         <img
           className="  h-6 w-30"
           src="https://imgs.search.brave.com/LMIgWnxdxD-4HQZT9LNLqoBmzJIh-N9Uwe51hi53Plk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mcmVl/bG9nb3BuZy5jb20v/aW1hZ2VzL2FsbF9p/bWcvMTY1NjUwMTI1/NXlvdXR1YmUtbG9n/by1wbmcucG5n"
