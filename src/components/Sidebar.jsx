@@ -2,154 +2,133 @@ import React from "react";
 import { AiOutlineHome } from "react-icons/ai";
 import { SiYoutubeshorts } from "react-icons/si";
 import { MdOutlineSubscriptions } from "react-icons/md";
-
+import { useSelector } from "react-redux";
 
 const SidebarItem = [
-    {
-        id: 1,
-        title: "Home",
-        icon:  <AiOutlineHome size={20} />
-
-    },
-    {
-        id: 2,
-        title: "Shorts",
-        icon:  <SiYoutubeshorts size={20} />
-
-    },
-    {
-        id: 3,
-        title: "Subscription",
-        icon:  <MdOutlineSubscriptions size={20} />
-
-    },
-    {
-        id: 1,
-        title: "Home",
-        icon:  <AiOutlineHome size={20} />
-
-    },
-    {
-        id: 2,
-        title: "Shorts",
-        icon:  <SiYoutubeshorts size={20} />
-
-    },
-    {
-        id: 3,
-        title: "Subscription",
-        icon:  <MdOutlineSubscriptions size={20} />
-
-    },
-    {
-        id: 1,
-        title: "Home",
-        icon:  <AiOutlineHome size={20} />
-
-    },
-    {
-        id: 2,
-        title: "Shorts",
-        icon:  <SiYoutubeshorts size={20} />
-
-    },
-    {
-        id: 3,
-        title: "Subscription",
-        icon:  <MdOutlineSubscriptions size={20} />
-
-    },
-    {
-        id: 1,
-        title: "Home",
-        icon:  <AiOutlineHome size={20} />
-
-    },
-    {
-        id: 2,
-        title: "Shorts",
-        icon:  <SiYoutubeshorts size={20} />
-
-    },
-    {
-        id: 3,
-        title: "Subscription",
-        icon:  <MdOutlineSubscriptions size={20} />
-
-    },
-    {
-        id: 1,
-        title: "Home",
-        icon:  <AiOutlineHome size={20} />
-
-    },
-    {
-        id: 2,
-        title: "Shorts",
-        icon:  <SiYoutubeshorts size={20} />
-
-    },
-    {
-        id: 3,
-        title: "Subscription",
-        icon:  <MdOutlineSubscriptions size={20} />
-
-    },
-    {
-        id: 1,
-        title: "Home",
-        icon:  <AiOutlineHome size={20} />
-
-    },
-    {
-        id: 2,
-        title: "Shorts",
-        icon:  <SiYoutubeshorts size={20} />
-
-    },
-    {
-        id: 3,
-        title: "Subscription",
-        icon:  <MdOutlineSubscriptions size={20} />
-
-    },
-    {
-        id: 1,
-        title: "Home",
-        icon:  <AiOutlineHome size={20} />
-
-    },
-    {
-        id: 2,
-        title: "Shorts",
-        icon:  <SiYoutubeshorts size={20} />
-
-    },
-    {
-        id: 3,
-        title: "Subscription",
-        icon:  <MdOutlineSubscriptions size={20} />
-
-    },
-
-]
-
-
+  {
+    id: 1,
+    title: "Home",
+    icon: <AiOutlineHome size={20} />,
+  },
+  {
+    id: 2,
+    title: "Shorts",
+    icon: <SiYoutubeshorts size={20} />,
+  },
+  {
+    id: 3,
+    title: "Subscription",
+    icon: <MdOutlineSubscriptions size={20} />,
+  },
+  {
+    id: 1,
+    title: "Home",
+    icon: <AiOutlineHome size={20} />,
+  },
+  {
+    id: 2,
+    title: "Shorts",
+    icon: <SiYoutubeshorts size={20} />,
+  },
+  {
+    id: 3,
+    title: "Subscription",
+    icon: <MdOutlineSubscriptions size={20} />,
+  },
+  {
+    id: 1,
+    title: "Home",
+    icon: <AiOutlineHome size={20} />,
+  },
+  {
+    id: 2,
+    title: "Shorts",
+    icon: <SiYoutubeshorts size={20} />,
+  },
+  {
+    id: 3,
+    title: "Subscription",
+    icon: <MdOutlineSubscriptions size={20} />,
+  },
+  {
+    id: 1,
+    title: "Home",
+    icon: <AiOutlineHome size={20} />,
+  },
+  {
+    id: 2,
+    title: "Shorts",
+    icon: <SiYoutubeshorts size={20} />,
+  },
+  {
+    id: 3,
+    title: "Subscription",
+    icon: <MdOutlineSubscriptions size={20} />,
+  },
+  {
+    id: 1,
+    title: "Home",
+    icon: <AiOutlineHome size={20} />,
+  },
+  {
+    id: 2,
+    title: "Shorts",
+    icon: <SiYoutubeshorts size={20} />,
+  },
+  {
+    id: 3,
+    title: "Subscription",
+    icon: <MdOutlineSubscriptions size={20} />,
+  },
+  {
+    id: 1,
+    title: "Home",
+    icon: <AiOutlineHome size={20} />,
+  },
+  {
+    id: 2,
+    title: "Shorts",
+    icon: <SiYoutubeshorts size={20} />,
+  },
+  {
+    id: 3,
+    title: "Subscription",
+    icon: <MdOutlineSubscriptions size={20} />,
+  },
+  {
+    id: 1,
+    title: "Home",
+    icon: <AiOutlineHome size={20} />,
+  },
+  {
+    id: 2,
+    title: "Shorts",
+    icon: <SiYoutubeshorts size={20} />,
+  },
+  {
+    id: 3,
+    title: "Subscription",
+    icon: <MdOutlineSubscriptions size={20} />,
+  },
+];
 
 const Sidebar = () => {
+  const open = useSelector((store) => store.app.open);
+  console.log(open);
+
   return (
-    <div className=" relative h-[calc(100vh-5.625rem)] overflow-y-scroll overflow-x-hidden w-[15%]">
-        {
-         SidebarItem.map((item,index)=>{
-            return(
-                <div key={index} className="flex  w-[70%] gap-x-5 ml-3 my-3 items-center">
+    <div className=" relative left-0 h-[calc(100vh-5.625rem)] pr-5 overflow-y-scroll overflow-x-hidden w-auto">
+      {SidebarItem.map((item, index) => {
+        return (
+          <div
+            key={index}
+            className="flex   ml-3 my-3 items-center"
+          >
             {item.icon}
-            <p className=" {}">{item.title}</p>
+            <p className={` ml-5 ${open ? "" : 'hidden'}`}>{item.title}</p>
           </div>
-            )
-         })
-        }
-      
+        );
+      })}
     </div>
   );
 };
