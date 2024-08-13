@@ -4,8 +4,6 @@ import { IoVideocamOutline } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 
 import Avatar from "react-avatar";
-import { useState } from "react";
-
 import { useDispatch } from "react-redux";
 import { togglesidebar } from "../utils/appSlice";
 
