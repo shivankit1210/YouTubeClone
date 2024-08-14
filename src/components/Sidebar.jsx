@@ -117,7 +117,7 @@ const Sidebar = () => {
   console.log(open);
 
   return (
-    <div className={`relative left-0 ${open?"w-[15%]":"w-[5%]"} h-[calc(100vh-5.625rem)] pr-5 overflow-y-scroll overflow-x-hidden w-[15%]`}>
+    <div className={` left-0 ${open?"w-[15%]":"w-[5%]"} h-[calc(100vh-5.625rem)] pr-5 overflow-y-scroll overflow-x-hidden w-[15%]`}>
       {SidebarItem.map((item, index) => {
         return (
           <div

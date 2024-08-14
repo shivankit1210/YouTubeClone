@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { YOUTUBE_VIDEO_API } from "../constants/youtube";
 import VideoCard from "./VideoCard";
+import { Link } from "react-router-dom";
 
 const VideoContainer = () => {
   const [video, setVideo] = useState([]);
@@ -23,7 +24,11 @@ const VideoContainer = () => {
   return (
     <div className="grid grid-cols-3 ">
       {video.map((item) => {
-        return( <VideoCard key={item.id} item={item} />);
+        return( 
+          <Link to={`/watch?v=${item.id}`} key={item.id}>
+          <VideoCard  item={item} />
+          </Link>
+        );
       })}
     </div>
   );

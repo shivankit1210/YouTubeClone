@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Avatar from "react-avatar";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { API_KEY } from "../constants/youtube";
+import axios from "axios";
 
 const VideoCart = ({item}) => {
 
+ const [ytIcon,setYtIcon]=useState("");
+
+
+  const getYoutubeChannel = async ()=>{
+    try {
+      const res = await axios.get(`https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${item.snippet.channelId}&key=${API_KEY}`)
+      setYtIcon(res.data.items[0].snippet.thumbnails.high.url)
+      console.log(res);
+    } catch (error) {
+     console.log(error); 
+    }
+  }
+
+  useEffect(()=>{
+    getYoutubeChannel();
+  },[]);
 
   // Function to convert views into K and M format
   const count =item.statistics.viewCount;
@@ -58,7 +76,7 @@ const VideoCart = ({item}) => {
           {/* profile shown here */}
           <div>
             <Avatar
-              src="https://imgs.search.brave.com/1FmtjnWK4l-_bQNovpqgP4nYDpT1Hy7CVgzmGq34Tkc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA2LzQ2Lzg1Lzg0/LzM2MF9GXzY0Njg1/ODQ0Ml81SkZlNDZk/OVRveVhuNldYbE1I/YWl0TXVnVDdaek9l/QS5qcGc"
+              src={ytIcon}
               size={30}
               className="cursor-pointer"
               round="30px"
@@ -82,7 +100,7 @@ const VideoCart = ({item}) => {
           <p>{item.snippet.channelTitle}</p>
         </div>
         <div className="text-xs text-gray-500 font-semibold pl-9">
-          <p>{FinalView} Views * {uploadTime}</p>
+          <p>{FinalView} Views  ({uploadTime})</p>
         </div>
       </div>
     </div>
