@@ -43,7 +43,6 @@ const Navbar = () => {
         <IoIosNotifications size={24}xx className="cursor-pointer" />
         <IoVideocamOutline size={24}xx className="cursor-pointer" />
         <Avatar
-        //   src="https://drive.google.com/file/d/1BsOSAOD7S7J9bWuT65Z0oKjdNIK5Xk1r/view?usp=drive_link"
           src="https://imgs.search.brave.com/1FmtjnWK4l-_bQNovpqgP4nYDpT1Hy7CVgzmGq34Tkc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA2LzQ2Lzg1Lzg0/LzM2MF9GXzY0Njg1/ODQ0Ml81SkZlNDZk/OVRveVhuNldYbE1I/YWl0TXVnVDdaek9l/QS5qcGc"
           size={30}xx className="cursor-pointer"
           round="30px"

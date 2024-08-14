@@ -13,11 +13,11 @@ const VideoCart = ({item}) => {
     try {
       const res = await axios.get(`https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${item.snippet.channelId}&key=${API_KEY}`)
       setYtIcon(res.data.items[0].snippet.thumbnails.high.url)
-      console.log(res);
-    } catch (error) {
+        } catch (error) {
      console.log(error); 
     }
   }
+
 
   useEffect(()=>{
     getYoutubeChannel();

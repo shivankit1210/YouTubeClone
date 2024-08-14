@@ -10,7 +10,6 @@ const VideoContainer = () => {
   const fetchVideo = async () => {
     try {
       const res = await axios.get(`${YOUTUBE_VIDEO_API}`);
-      console.log(res?.data?.items);
       setVideo(res?.data?.items);
     } catch (error) {
       console.log(error);
