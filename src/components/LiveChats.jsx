@@ -3,19 +3,21 @@ import ChatMessage from "./ChatMessage";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setMessage } from "../utils/chatsSlice";
+import { generateRandomMessage } from "../utils/helper";
+import { generateRandomName } from "../utils/helper";
 
 const LiveChats = () => {
   const message = useSelector((store) => store.chat.message);
   const dispatch=useDispatch();
 
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     dispatch(setMessage({ 
-  //       name:"shivankit agarwal",
-  //       message:"heyyy",
-  //     }))
-  //   }, 1000);
-  // }, []);
+  useEffect(() => {
+    setInterval(() => {
+      dispatch(setMessage({ 
+        name:generateRandomName(),
+        message:generateRandomMessage(16),
+      }))
+    }, 3000);
+  }, []);
 
   return (
     <div className="px-2 py-4">
