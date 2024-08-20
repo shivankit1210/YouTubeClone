@@ -9,7 +9,7 @@ const ChatMessage = ({item}) => {
           src={
             "https://imgs.search.brave.com/tDxcO_6xSWtpwvBw2BIuSR268kyHOPrRSVU5jV7zamQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90cmlj/a3NjaXR5LmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAxNy8w/OS9BdHRpdHVkZS1E/UC5qcGc"
           }
-          size={30}
+          size={28}
           className="cursor-pointer"
           round="30px"
         />

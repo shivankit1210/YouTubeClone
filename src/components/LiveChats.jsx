@@ -11,12 +11,16 @@ const LiveChats = () => {
   const dispatch=useDispatch();
 
   useEffect(() => {
-    setInterval(() => {
+    const timer = setInterval(() => {
       dispatch(setMessage({ 
         name:generateRandomName(),
         message:generateRandomMessage(16),
-      }))
-    }, 3000);
+      })) 
+    }, 1000)
+
+    return(()=>{
+    clearInterval(timer)
+    })
   }, []);
 
   return (
