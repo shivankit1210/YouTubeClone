@@ -20,13 +20,7 @@ const Watch = () => {
   const [searchParams] = useSearchParams();
   const videoId = searchParams.get("v");
 
-  const [url,setUrl]=useState("");
-
-    axios.get(`https://robohash.org/shu`)
-    .then((response)=>{
-    const url =
-    })
-    setUrl(url)
+  
   
 
   const dispatch =useDispatch();
