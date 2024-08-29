@@ -4,7 +4,7 @@ import { SiYoutubeshorts } from "react-icons/si";
 import { MdOutlineSubscriptions } from "react-icons/md";
 import { useSelector } from "react-redux";
 
-const SidebarItem = [
+const SidebarItem1 = [
   {
     id: 1,
     title: "Home",
@@ -35,82 +35,10 @@ const SidebarItem = [
     title: "Subscription",
     icon: <MdOutlineSubscriptions size={20} />,
   },
-  {
-    id: 1,
-    title: "Home",
-    icon: <AiOutlineHome size={20} />,
-  },
-  {
-    id: 2,
-    title: "Shorts",
-    icon: <SiYoutubeshorts size={20} />,
-  },
-  {
-    id: 3,
-    title: "Subscription",
-    icon: <MdOutlineSubscriptions size={20} />,
-  },
-  {
-    id: 1,
-    title: "Home",
-    icon: <AiOutlineHome size={20} />,
-  },
-  {
-    id: 2,
-    title: "Shorts",
-    icon: <SiYoutubeshorts size={20} />,
-  },
-  {
-    id: 3,
-    title: "Subscription",
-    icon: <MdOutlineSubscriptions size={20} />,
-  },
-  {
-    id: 1,
-    title: "Home",
-    icon: <AiOutlineHome size={20} />,
-  },
-  {
-    id: 2,
-    title: "Shorts",
-    icon: <SiYoutubeshorts size={20} />,
-  },
-  {
-    id: 3,
-    title: "Subscription",
-    icon: <MdOutlineSubscriptions size={20} />,
-  },
-  {
-    id: 1,
-    title: "Home",
-    icon: <AiOutlineHome size={20} />,
-  },
-  {
-    id: 2,
-    title: "Shorts",
-    icon: <SiYoutubeshorts size={20} />,
-  },
-  {
-    id: 3,
-    title: "Subscription",
-    icon: <MdOutlineSubscriptions size={20} />,
-  },
-  {
-    id: 1,
-    title: "Home",
-    icon: <AiOutlineHome size={20} />,
-  },
-  {
-    id: 2,
-    title: "Shorts",
-    icon: <SiYoutubeshorts size={20} />,
-  },
-  {
-    id: 3,
-    title: "Subscription",
-    icon: <MdOutlineSubscriptions size={20} />,
-  },
+ 
 ];
+
+const
 
 const Sidebar = () => {
   const open = useSelector((store) => store.app.open);
