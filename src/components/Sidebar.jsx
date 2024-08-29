@@ -21,17 +21,17 @@ const SidebarItem1 = [
     icon: <MdOutlineSubscriptions size={20} />,
   },
   {
-    id: 1,
+    id: 4,
     title: "Home",
     icon: <AiOutlineHome size={20} />,
   },
   {
-    id: 2,
+    id: 5,
     title: "Shorts",
     icon: <SiYoutubeshorts size={20} />,
   },
   {
-    id: 3,
+    id: 6,
     title: "Subscription",
     icon: <MdOutlineSubscriptions size={20} />,
   },
