@@ -4,7 +4,7 @@ import { SiYoutubeshorts } from "react-icons/si";
 import { MdOutlineSubscriptions } from "react-icons/md";
 import { useSelector } from "react-redux";
 
-const SidebarItem1 = [
+const SidebarItem = [
   {
     id: 1,
     title: "Home",
@@ -37,8 +37,6 @@ const SidebarItem1 = [
   },
  
 ];
-
-const
 
 const Sidebar = () => {
   const open = useSelector((store) => store.app.open);

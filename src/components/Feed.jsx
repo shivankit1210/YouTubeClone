@@ -4,14 +4,9 @@ import VideoContainer from "./VideoContainer";
 
 const Feed = () => {
   return (
-    <div className="flex flex-col ml-5  mt-3">
-      <div>
-        <ButtonList />
-      </div>
-
-      <div>
-        <VideoContainer />
-      </div>
+    <div className=" ml-5 w-[80%] mt-3">
+      <ButtonList />
+      <VideoContainer />
     </div>
   );
 };
