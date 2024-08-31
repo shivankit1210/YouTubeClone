@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const buttonList = [
   {
@@ -73,16 +73,25 @@ const buttonList = [
 ];
 
 const ButtonList = () => {
+const [active,setActive]=useState("All");
+
+const videoByTag =(tag) =>{
+if(active!=tag){
+  console.log(tag.title);
+  setActive(tag);
+}
+}
+
   return (
-    <div className="flex w-full overflow-x-scroll">
-      {buttonList.map((item, index) => {
+    <div className="flex w-full overflow-x-scroll no-scrollbar ">
+      {buttonList.map((buttonName) => {
         return (
          <div>
-            <button
+            <button onClick={()=>{videoByTag(buttonName)}}
             key={buttonList.id}
-            className="bg-gray-200 text-gray-900 rounded-lg px-1 py-1 m-1 text-sm font-semibold"
+            className={`${active==buttonName ? "bg-black text-white":"bg-gray-200 text-gray-900"}   rounded-lg px-1 py-1 m-1 text-sm font-semibold`}
           >
-            <span className="whitespace-nowrap">{item.title}</span>
+            <span className="whitespace-nowrap">{buttonName.title}</span>
             
           </button>
          </div>
