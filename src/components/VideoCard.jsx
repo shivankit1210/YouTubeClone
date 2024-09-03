@@ -24,7 +24,7 @@ const VideoCart = ({item}) => {
   },[]);
 
   // Function to convert views into K and M format
-  const count =item.statistics.viewCount;
+  const count =item.statistics.viewCount || 0;
   const viewConvert=(count)=>{
     if (count >= 1_000_000) {
       return (count / 1_000_000).toFixed(1) + 'M';

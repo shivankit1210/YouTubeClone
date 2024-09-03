@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setCategory } from "../utils/appSlice";
 
 const buttonList = [
   {
@@ -75,9 +77,11 @@ const buttonList = [
 const ButtonList = () => {
 const [active,setActive]=useState("All");
 
+const dispatch= useDispatch();
+
 const videoByTag =(tag) =>{
 if(active!=tag){
-  console.log(tag.title);
+  dispatch(setCategory(tag))
   setActive(tag);
 }
 }

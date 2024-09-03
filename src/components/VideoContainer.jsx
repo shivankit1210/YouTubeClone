@@ -4,18 +4,17 @@ import { YOUTUBE_VIDEO_API } from "../constants/youtube";
 import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
 import { API_KEY } from "../constants/youtube";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setHomeVideo } from "../utils/appSlice";
 
 const VideoContainer = () => {
-  const [video, setVideo] = useState([]);
+  const {video,category}= useSelector((store)=>store.app);
 
   const dispatch= useDispatch();
 
   const fetchVideo = async () => {
     try {
       const res = await axios.get(`${YOUTUBE_VIDEO_API}`);
-      setVideo(res?.data?.items);
       dispatch(setHomeVideo(res?.data?.items))
     } catch (error) {
       console.log(error);
@@ -25,8 +24,8 @@ const VideoContainer = () => {
   const fetchVideoByCategory = async ()=> {
 
     try {
-      const res = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=YOURKEYWORD&type=video&key=${API_KEY}`)
-
+      const res = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${category}&type=video&key=${API_KEY}`)
+       dispatch(setHomeVideo(res?.data?.items))
     } catch (error) {
       
     }
@@ -35,7 +34,8 @@ const VideoContainer = () => {
 
   useEffect(() => {
     fetchVideo();
-  }, []);
+    fetchVideoByCategory();
+  }, [category]);
 
   return (
     <div className="grid grid-cols-3 ">
