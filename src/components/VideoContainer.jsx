@@ -21,27 +21,33 @@ const VideoContainer = () => {
     }
   };
 
-  const fetchVideoByCategory = async ()=> {
+  const fetchVideoByCategory = async (category)=> {
 
     try {
       const res = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${category}&type=video&key=${API_KEY}`)
        dispatch(setHomeVideo(res?.data?.items))
     } catch (error) {
-      
+      console.log(error);
     }
 
   }
 
   useEffect(() => {
-    fetchVideo();
-    fetchVideoByCategory();
+    if(category==="All"){
+      fetchVideo();
+
+    }
+    else{
+      fetchVideoByCategory(category);
+
+    }
   }, [category]);
 
   return (
     <div className="grid grid-cols-3 ">
       {video.map((item) => {
         return( 
-          <Link to={`/watch?v=${item.id}`} key={item.id}>
+          <Link to={`/watch?v=${item.id}`} key={typeof item.id === 'object' ? item.id.videoId : video.id }>
           <VideoCard  item={item} />
           </Link>
         );
